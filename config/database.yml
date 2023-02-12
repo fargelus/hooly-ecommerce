@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: hooly_ecommerce_development
+
+test:
+  <<: *default
+  database: hooly_ecommerce_test
+
+production:
+  <<: *default
+  database: hooly_ecommerce_production
+  username: hooly_ecommerce
+  password: <%= ENV["HOOLY_ECOMMERCE_DATABASE_PASSWORD"] %>
