@@ -35,6 +35,27 @@ gem "redis", "~> 4.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# 🔑 Devise authentication for your Solidus store.
+gem "solidus_auth_devise", "~> 2.5"
+
+# 🛒 eCommerce framework for industry trailblazers.
+gem "solidus_core", "~> 3.3"
+gem "solidus_backend", "~> 3.3"
+gem "solidus_api", "~> 3.3"
+gem "solidus_support"
+
+# Quick and configurable canonical tag to use in Rails views.
+gem "canonical-rails"
+
+# Cuts off a string of HTML
+gem "truncate_html"
+
+# Building reusable, testable & encapsulated view components in Ruby on Rails
+gem "view_component", "~> 2.46"
+
+# mini replacement for RMagick
+gem "mini_magick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -44,40 +65,7 @@ group :development, :test do
 
   # RSpec for Rails 5+
   gem "rspec-rails"
-end
 
-group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-end
-
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
-end
-
-# 🛒 eCommerce framework for industry trailblazers.
-
-gem "solidus_auth_devise", "~> 2.5"
-
-gem "solidus_core", "~> 3.3"
-gem "solidus_backend", "~> 3.3"
-gem "solidus_api", "~> 3.3"
-gem "solidus_sample", "~> 3.3"
-gem "canonical-rails"
-gem "solidus_support"
-gem "truncate_html"
-gem "view_component", "~> 2.46"
-gem "mini_magick"
-
-group :test do
-  gem "capybara-screenshot", "~> 1.0"
-  gem "database_cleaner", "~> 1.7"
-end
-
-group :development, :test do
   gem "rspec-rails"
   gem "rails-controller-testing", "~> 1.0.5"
   gem "rspec-activemodel-mocks", "~> 1.1.0"
@@ -89,3 +77,13 @@ group :development, :test do
   gem "rubocop-rails", "~> 2.3"
   gem "rubocop-rspec", "~> 2.0"
 end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
+  gem "capybara-screenshot", "~> 1.0"
+  gem "database_cleaner", "~> 1.7"
+end
+
